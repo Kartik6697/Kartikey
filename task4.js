@@ -21,12 +21,7 @@ console.log("no. of cows : ", z);
 total_animal = Number(x) + Number(y) + Number(z);
 console.log("Total number of Species : ", total_animal);
 
-// condition to check that total no. of animals are >10 or not
-// if animals are >10 than process all the counting actions
-if (total_animal >= 10) {
-  // displaying from which condition it is
-  document.write("total no. of animals >= 10 :" + "<br>");
-
+if (Number(x) || Number(y) || Number(z) > 0) {
   // counts legs and store values
   // used ES6 syntax of "templet string"
   C_legs = 2 * Number(x);
@@ -46,29 +41,16 @@ if (total_animal >= 10) {
   // counts total no. of legs and print them on screen
   total_legs = Number(C_legs) + Number(D_legs) + Number(CW_legs);
   document.write("Total number of legs : ", total_legs + "<br>");
-} else if (total_animal < 10) {
-  // displaying from which condition it is
-  document.write("total no. of animals < 10 :" + "<br>");
 
-  // counts legs and store values
-  // used ES6 syntax of "templet string"
-  C_legs = 2 * Number(x);
-  chicken = ` ${Number(C_legs)} legs`;
-
-  D_legs = 4 * Number(y);
-  dogs = `  ${Number(D_legs)} legs`;
-
-  CW_legs = 4 * Number(z);
-  cows = ` ${Number(CW_legs)} legs`;
-
-  // this will print the no of species
-  document.write("chicken : ", chicken + "<br>");
-  document.write("dogs : ", dogs + "<br>");
-  document.write("cows : ", cows + "<br>");
-
-  // counts total no. of legs and print them on screen
-  total_legs = Number(C_legs) + Number(D_legs) + Number(CW_legs);
-  document.write("Total number of legs : ", total_legs + "<br>");
+  // condition to check that total no. of animals are >10 or not
+  // if animals are >10 than process all the counting actions
+  if (total_animal >= 10) {
+    // displaying from which condition it is
+    document.write("total no. of animals >= 10 :" + "<br>");
+  } else {
+    // displaying from which condition it is
+    document.write("total no. of animals < 10 :" + "<br>");
+  }
 } else {
   document.write("enter valid input !!");
 }
