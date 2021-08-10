@@ -24,8 +24,9 @@ document.write("Multiplication of numbers :", result + "<br>");
 
 //division of two numbers round of 2 digits after "."
 result = Number(a) / Number(b);
-document.write("Division of numbers :", result + "<br>");
-debugger
+var num = result.toFixed(2);
+document.write("Division of numbers :", num + "<br>");
+
 //reminder
 result = Number(a) % Number(b);
 document.write("Reminder of numbers :", result +"<br>");
