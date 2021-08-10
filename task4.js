@@ -1,35 +1,46 @@
 //let's assume x=chicken, y= dog, z=cow
+// declaring all the variables here
+let x, y, z;
+let total_animal, total_legs;
+let C_legs, D_legs, CW_legs;
+let chicken, dogs, cows;
 
-//get value of chickens and count their legs:
-var x = prompt('enter number of chickens :', x);
-// console.log(x);
+// get value of chickens and count their legs:
+x = prompt("enter number of chickens :", x);
+document.write("no. of chickens : ", x + "<br>");
 
-document.write('no. of chickens : ', x + '<br>');
-let C_legs = 2 * Number(x);
-let chicken = Number(C_legs) + " "+'legs';
+// get value of dogs and count their legs:
+y = prompt("enter number of dogs : ", y);
+document.write("no. of dogs : ", y + "<br>");
 
-//get value of dogs and count their legs:
-var y = prompt('enter number of dogs : ', y);
-// console.log(y);
-document.write('no. of dogs : ', y + '<br>');
-let D_legs = 4 * Number(y);
-let dogs = Number(D_legs) + " "+'legs';
+// get value of cows and count their legs:
+z = prompt("enter number of cows : ", z);
+document.write("no. of cows : ", z + "<br>");
 
-//get value of cows and count their legs:
-var z = prompt('enter number of cows : ', z);
-// console.log(z);
-document.write('no. of cows : ', z + '<br>');
-let CW_legs = 4 * Number(z);
-let cows = Number(CW_legs) + " "+'legs';
+// count total no. of animals:
+total_animal = Number(x) + Number(y) + Number(z);
+document.write("Total number of Species : ", total_animal + "<br>");
 
-//this will print the no of species
-document.write('chicken : ', chicken + '<br>');
-document.write('dogs : ', dogs + '<br>');
-document.write('cows : ', cows + '<br>');
+// condition to check that total no. of animals are >10 or not
+// if animals are >10 than process all the counting actions
+if (total_animal > 10) {
+  // counts legs and store values
+  // used ES6 syntax of "templet string"
+  C_legs = 2 * Number(x);
+  chicken = ` ${Number(C_legs)} legs`;
 
+  D_legs = 4 * Number(y);
+  dogs = `  ${Number(D_legs)} legs`;
 
-//count total no. of animals:
-let total_animal = Number(x) + Number(y) + Number(z);
-document.write('Total number of Species : ', total_animal + '<br>');
-let total_legs = Number(C_legs) + Number(D_legs) + Number(CW_legs);
-document.write('Total number of legs : ', total_legs + '<br>');
+  CW_legs = 4 * Number(z);
+  cows = ` ${Number(CW_legs)} legs`;
+
+  // this will print the no of species
+  document.write("chicken : ", chicken + "<br>");
+  document.write("dogs : ", dogs + "<br>");
+  document.write("cows : ", cows + "<br>");
+
+  // counts total no. of legs and print them on screen
+  total_legs = Number(C_legs) + Number(D_legs) + Number(CW_legs);
+  document.write("Total number of legs : ", total_legs + "<br>");
+}

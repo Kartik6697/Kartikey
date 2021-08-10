@@ -1,4 +1,6 @@
-var a = prompt("enter value", +a);
+let a;
+let result;
+a = prompt("enter value", +a);
 console.log("value a = ", a);
 document.write("a = ", a + "<br>");
 let b = 25;
@@ -21,25 +23,23 @@ result = Number(a) * Number(b);
 document.write("Multiplication of numbers :", result + "<br>");
 // document.write("\n");
 
-
-//division of two numbers round of 2 digits after "."
+// division of two numbers round of 2 digits after "."
 result = Number(a) / Number(b);
-var num = result.toFixed(2);
+const num = result.toFixed(2);
 document.write("Division of numbers :", num + "<br>");
 
 //reminder
 result = Number(a) % Number(b);
-document.write("Reminder of numbers :", result +"<br>");
+document.write("Reminder of numbers :", result + "<br>");
 
-    //increment of digit
-    result = Number(++a);
-    document.write("Incremented number is : ", result +"<br>");
+//exponentiation of digit
+result = Number(a) ** 2 ;
+document.write("Exponential of numbers :", result + "<br>");
 
-    //decrement of digit
-    result = Number(--a);
-    document.write("Decremented number is : ", result +"<br");
+//increment of digit
+result = Number(++a);
+document.write("Incremented number is : ", result + "<br>");
 
-
-    // //exponentiation of digit
-    // sum = Number(a) + Number(b);
-    // document.write("Addition of numbers :", sum);
+//decrement of digit
+result = Number(--a);
+document.write("Decremented number is : ", result + "<br");
