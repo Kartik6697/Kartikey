@@ -21,7 +21,7 @@ console.log("no. of cows : ", z);
 total_animal = Number(x) + Number(y) + Number(z);
 console.log("Total number of Species : ", total_animal);
 
-if (Number(x) || Number(y) || Number(z) > 0) {
+if (Number(x) >= 0 && Number(y) >= 0 && Number(z) >= 0) {
   // counts legs and store values
   // used ES6 syntax of "templet string"
   C_legs = 2 * Number(x);
@@ -46,10 +46,10 @@ if (Number(x) || Number(y) || Number(z) > 0) {
   // if animals are >10 than process all the counting actions
   if (total_animal >= 10) {
     // displaying from which condition it is
-    document.write("total no. of animals >= 10 :" + "<br>");
+    document.write("total no. of animals >= 10 " + "<br>");
   } else {
     // displaying from which condition it is
-    document.write("total no. of animals < 10 :" + "<br>");
+    document.write("total no. of animals < 10 " + "<br>");
   }
 } else {
   document.write("enter valid input !!");
