@@ -11,7 +11,7 @@ const calcAverage1 = (India_A) =>
   // let avg = 0;
 
   //function that calculate values of array and do add
-  India_A.forEach(function (item1) {
+  India_A.map(function (item1) {
     total1 += item1;
     count1++;
   });
@@ -33,7 +33,7 @@ const calcAverage2 = (India_B) =>
   // let avg = 0;
 
   //function that calculate values of array and do add
-  India_B.forEach(function (item2) {
+  India_B.map(function (item2) {
     total2 += item2;  //addition of values
     count2++; //value count increment
   });
