@@ -14,7 +14,7 @@ let calTip = bill => {
     } else {
       tip[index] = Element * 0.2;
     }
-    // get total bill amount
+     // get total bill amount
     total[index] = tip[index] + bill[index];
   });
 };
