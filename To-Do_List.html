@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <script src="app.js"></script>
-      <title>To-Do_List</title>
-    </head>
+    <!-- basic css stylesheet from bootstrap -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    /> -->
 
-    <body>
-      <header>
-        <div class="container">
-          <h1><strong>ToDo List</strong></h1>
-        </div>
-      </header>
-
-      <!-- message for  the inpute bar -->
-      <div class="container mt-3">
-        <h2>Insert Tasks :</h2>
-
-        <!-- input bar properties -->
-        <form id="addForm">
-            <div>
-              <input
-                type="text"
-                onkeyup="toggleButton(this, 'submit')"
-                class="form-control"
-                id="item"
-                placeholder="Please Enter Task"
-              />
-            </div>
-
-            <!-- button properties -->
-            <div>
-              <input
-                type="submit"
-                class="btn btn-success"
-                id="submit"
-                value="Submit"
-                disabled
-              />
-            </div>
-        </form>
-
-        <!-- seperation through message for list of task -->
-        <h3 class="mt-4">Tasks</h3>
-
-        <!-- shows the items those are inserted as input -->
-        <form id="addForm">
-          <ul class="list-group" id="items"></ul>
-        </form>
+    <!-- <script src="app.js"></script> -->
+    <title>To-Do_List</title>
+  </head>
+         
+  <body>
+    <!-- provide a background and font color to header and also give some padding -->
+    <!-- <header class="bg-info text-white p-5">
+      <div>
+         <h1><strong>ToDo List</strong></h1>
       </div>
-    </body>
+    </header> -->
+
+    <!-- message for  the inpute bar -->
+    <div>
+      
+
+      <!-- input bar properties -->
+      <!-- <form id="addForm" > -->
+        <h2>Insert Tasks :</h2>
+        <div>
+          <!-- this action is for perform when key is released -->
+          <input
+            style="width: fit-content;"
+            type="text"
+            id="item"
+            placeholder="Please Enter Task"
+
+          />
+        
+
+        <!-- button properties -->
+        
+          <input
+            type="submit"
+            id="submit"
+            value="Submit"
+          />
+          <!-- <button>
+            Submit
+          </button> -->
+        </div>
+      <!-- </form> -->
+
+      <!-- seperation through message for list of task -->
+      <h3 class="mt-4">Tasks</h3>
+
+      <!-- shows the items those are inserted as input -->
+      <!-- <form id="addForm"> -->
+        <div >
+        <!-- <ul  id="items" ></ul> -->
+      </div>
+      <!-- </form> -->
+    </div>
+  </body>
 </html>
