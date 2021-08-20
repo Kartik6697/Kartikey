@@ -1,8 +1,8 @@
-// //for loop
-// const jsondata = ["Hockey", "Badminton", "Volleyball", "Cricket", "Football"];
-// for (let i = 0; i < jsondata.length; i++) {
-//     document.write(`array's ${i} index values is : ${jsondata[i]} <br>` );
-// }
+//for loop
+const jsondata = ["Hockey", "Badminton", "Volleyball", "Cricket", "Football"];
+for (let i = 0; i < jsondata.length; i++) {
+    document.write(`array's ${i} index values is : ${jsondata[i]} <br>` );
+}
 
 // //forEach loop
 // const jsondata = ["Hockey", "Badminton", "Volleyball", "Cricket", "Football"];
@@ -47,16 +47,16 @@
 //   myFunction();
 
 //map implementation
-let data;
-const jsondata = [
-  { name: "Manpreet", sport: "Hockey" },
-  { name: "Sunil", sport: "Football" },
-  { name: "Gurinder", sport: "Volleyball" },
-];
-//map the function
-document.write(jsondata.map(NameDetail));
-//create a function to take array values
-function NameDetail(item) {
-  data = [`${item.name} is captain of Indian ${item.sport} Team <br>`];
-  document.write(data);
-}
+// let data;
+// const jsondata = [
+//   { name: "Manpreet", sport: "Hockey" },
+//   { name: "Sunil", sport: "Football" },
+//   { name: "Gurinder", sport: "Volleyball" },
+// ];
+// //map the function
+// document.write(jsondata.map(NameDetail));
+// //create a function to take array values
+// function NameDetail(item) {
+//   data = [`${item.name} is captain of Indian ${item.sport} Team <br>`];
+//   document.write(data);
+// }

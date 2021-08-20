@@ -1,3 +1,4 @@
+// created function to get value as number
 const dayNumber = (day) =>{
     value = Number(day);
 
@@ -28,8 +29,8 @@ switch (value) {
     break;
 }
 }
-
+// getting value from user
 let value = prompt(`Enter value :`);
 document.write(`value : ${value} <br>`);
-
-let weekday = dayNumber(value);
+//calling function
+dayNumber(value);
