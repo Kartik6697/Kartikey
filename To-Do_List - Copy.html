@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <script src="app.js"></script>
+      <title>To-Do_List</title>
+    </head>
+
+    <body>
+      <header>
+        <div class="container">
+          <h1><strong>ToDo List</strong></h1>
+        </div>
+      </header>
+
+      <!-- message for  the inpute bar -->
+      <div class="container mt-3">
+        <h2>Insert Tasks :</h2>
+
+        <!-- input bar properties -->
+        <form id="addForm">
+            <div>
+              <input
+                type="text"
+                onkeyup="toggleButton(this, 'submit')"
+                class="form-control"
+                id="item"
+                placeholder="Please Enter Task"
+              />
+            </div>
+
+            <!-- button properties -->
+            <div>
+              <input
+                type="submit"
+                class="btn btn-success"
+                id="submit"
+                value="Submit"
+                disabled
+              />
+            </div>
+        </form>
+
+        <!-- seperation through message for list of task -->
+        <h3 class="mt-4">Tasks</h3>
+
+        <!-- shows the items those are inserted as input -->
+        <form id="addForm">
+          <ul class="list-group" id="items"></ul>
+        </form>
+      </div>
+    </body>
+</html>
