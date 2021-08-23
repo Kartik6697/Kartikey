@@ -1,31 +1,6 @@
 //function called here to display list eveytime
-showtask();
-let addtaskinput = document.getElementById("addtaskinput");
-let addtaskbtn = document.getElementById("addtaskbtn");
-
-addtaskbtn.addEventListener("click", function () {
-  let addtaskinputval = addtaskinput.value; //get input value
-  //check the input is blank or not / if not than this task will perform
-  if (addtaskinputval.trim() != 0) {
-    //check that any value is already in local storage or not / if not then create one array to store value
-    let webtask = localStorage.getItem("localtask");
-    if (webtask == null) {
-      taskObj = [];
-    }
-    //if not empty then we parse that variable to apply diff methods on that data
-    else {
-      taskObj = JSON.parse(webtask);
-    }
-    taskObj.push({ task_name: addtaskinputval, completeStatus: false });
-    //we create obj through parse and for now get value we use stringify
-    localStorage.setItem("localtask", JSON.stringify(taskObj));
-    addtaskinput.value = "";
-  }
-  showtask();
-});
-
 // showtask function
-function showtask() {
+showtask =() => {
   let webtask = localStorage.getItem("localtask");
   if (webtask == null) {
     taskObj = [];
@@ -52,12 +27,39 @@ function showtask() {
   addedtasklist.innerHTML = html;
 }
 
+showtask();
+const addtaskinput = document.getElementById("addtaskinput");
+const addtaskbtn = document.getElementById("addtaskbtn");
+
+addtaskbtn.addEventListener("click", function () {
+  let addtaskinputval = addtaskinput.value; //get input value
+  //check the input is blank or not / if not than this task will perform
+  if (addtaskinputval.trim() != 0) {
+    //check that any value is already in local storage or not / if not then create one array to store value
+    let webtask = localStorage.getItem("localtask");
+    if (webtask == null) {
+      taskObj = [];
+    }
+    //if not empty then we parse that variable to apply diff methods on that data
+    else {
+      taskObj = JSON.parse(webtask);
+    }
+    taskObj.push({ task_name: addtaskinputval, completeStatus: false });
+    //we create obj through parse and for now get value we use stringify
+    localStorage.setItem("localtask", JSON.stringify(taskObj));
+    addtaskinput.value = "";
+  }
+  showtask();
+});
+
+
+
 // edittask
-function edittask(index) {
+edittask = (index) => {
   //get buttons of add and save
-  let saveindex = document.getElementById("saveindex"); //text of hidden input is get through this line
-  let addtaskbtn = document.getElementById("addtaskbtn");
-  let savetaskbtn = document.getElementById("savetaskbtn");
+  const saveindex = document.getElementById("saveindex"); //text of hidden input is get through this line
+  const addtaskbtn = document.getElementById("addtaskbtn");
+  const savetaskbtn = document.getElementById("savetaskbtn");
   //set value of hidden input as index
   saveindex.value = index;
   //get data stored in localstorage
@@ -70,7 +72,7 @@ function edittask(index) {
 }
 
 // savetask
-let savetaskbtn = document.getElementById("savetaskbtn");
+const savetaskbtn = document.getElementById("savetaskbtn");
 savetaskbtn.addEventListener("click", function () {
   //get from local storage
   let addtaskbtn = document.getElementById("addtaskbtn");
@@ -90,7 +92,7 @@ savetaskbtn.addEventListener("click", function () {
   showtask();
 });
 // deleteitem
-function deleteitem(index) {
+deleteitem = (index) => {
   //first we get value from local storage
   let webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
@@ -103,7 +105,7 @@ function deleteitem(index) {
 }
 
 // deleteall
-let deleteallbtn = document.getElementById("deleteallbtn");
+const deleteallbtn = document.getElementById("deleteallbtn");
 deleteallbtn.addEventListener("click", function () {
   //we get those elements from add and save
   let savetaskbtn = document.getElementById("savetaskbtn");
