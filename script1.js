@@ -95,11 +95,6 @@ console.log(person);
 //   });
 //   console.log(findname);
   
-//   //forEach
-//   person.forEach((value) => {
-//     console.log(value.fname);
-//   });
-  
 //   };
 //   //delete value using splice
 //   person1 = Object.assign([],person)
