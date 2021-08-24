@@ -1,7 +1,7 @@
 //function called here to display list eveytime
 // showtask function
-showtask =() => {
-  let webtask = localStorage.getItem("localtask");
+const showtask =() => {
+  const webtask = localStorage.getItem("localtask");
   if (webtask == null) {
     taskObj = [];
   } else {
@@ -36,7 +36,7 @@ addtaskbtn.addEventListener("click", function () {
   //check the input is blank or not / if not than this task will perform
   if (addtaskinputval.trim() != 0) {
     //check that any value is already in local storage or not / if not then create one array to store value
-    let webtask = localStorage.getItem("localtask");
+     webtask = localStorage.getItem("localtask");
     if (webtask == null) {
       taskObj = [];
     }
@@ -55,7 +55,7 @@ addtaskbtn.addEventListener("click", function () {
 
 
 // edittask
-edittask = (index) => {
+const edittask = (index) => {
   //get buttons of add and save
   const saveindex = document.getElementById("saveindex"); //text of hidden input is get through this line
   const addtaskbtn = document.getElementById("addtaskbtn");
@@ -63,7 +63,7 @@ edittask = (index) => {
   //set value of hidden input as index
   saveindex.value = index;
   //get data stored in localstorage
-  let webtask = localStorage.getItem("localtask");
+  webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
   addtaskinput.value = taskObj[index]["task_name"];
   //style property to display buttons simulteniously
@@ -72,11 +72,11 @@ edittask = (index) => {
 }
 
 // savetask
-const savetaskbtn = document.getElementById("savetaskbtn");
+savetaskbtn = document.getElementById("savetaskbtn");
 savetaskbtn.addEventListener("click", function () {
   //get from local storage
   let addtaskbtn = document.getElementById("addtaskbtn");
-  let webtask = localStorage.getItem("localtask");
+  webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
   let saveindex = document.getElementById("saveindex").value; //same index type became value for hidden input, that value stored in this variable
   //to store edited value in local storage
@@ -92,9 +92,9 @@ savetaskbtn.addEventListener("click", function () {
   showtask();
 });
 // deleteitem
-deleteitem = (index) => {
+const deleteitem = (index) => {
   //first we get value from local storage
-  let webtask = localStorage.getItem("localtask");
+  webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
   //if we know we can use splice to perform deletion
   //in bracate index= value stored in array and 1=no of vlaues to be deleted
@@ -108,9 +108,9 @@ deleteitem = (index) => {
 const deleteallbtn = document.getElementById("deleteallbtn");
 deleteallbtn.addEventListener("click", function () {
   //we get those elements from add and save
-  let savetaskbtn = document.getElementById("savetaskbtn");
-  let addtaskbtn = document.getElementById("addtaskbtn");
-  let webtask = localStorage.getItem("localtask");
+  savetaskbtn = document.getElementById("savetaskbtn");
+  addtaskbtn = document.getElementById("addtaskbtn");
+  webtask = localStorage.getItem("localtask");
   let taskObj = JSON.parse(webtask);
   if (webtask == null) {
     taskObj = [];
