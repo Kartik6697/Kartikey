@@ -11,12 +11,14 @@ let person = [
 person.push({firstname: "rohit", lastneme: "sharma", age: 35, email: "rohit@sharma.com"});
 console.log(`push method`);
 console.log(person);
+document.getElementById('test').innerHTML=JSON.stringify(person);
 
 //assign value
 let newArray = Object.assign([], person);
 person = newArray;
 console.log(`assign method`);
 console.log(person);
+document.getElementById('test1').innerHTML=JSON.stringify(person);
 
 //filter method
 const personfilter = person.filter((value) => {
@@ -24,6 +26,7 @@ const personfilter = person.filter((value) => {
 });
 console.log(`filter method`);
 console.log(personfilter);
+document.getElementById('test2').innerHTML=JSON.stringify(personfilter);
 
 //map method
 let mapnames = person.map((value) => {
@@ -31,6 +34,7 @@ let mapnames = person.map((value) => {
 });
 console.log(`map method`);
 console.log(mapnames);
+document.getElementById('test3').innerHTML=JSON.stringify(mapnames);
 
 //find
 const findname = person.find((value) => {
@@ -38,6 +42,7 @@ const findname = person.find((value) => {
 });
 console.log(`find method`);
 console.log(findname);
+document.getElementById('test4').innerHTML=JSON.stringify(findname);
 
 //delete value using splice
 let newArray1 = Object.assign([],person)
@@ -45,7 +50,7 @@ newArray1.splice(1, 1);
 person = newArray1;
 console.log(`delete(splice) method`);
 console.log(person);
-
+document.getElementById('test5').innerHTML=JSON.stringify(person);
 
 // //dynamic way to get input and perform (but got some problems in this way)
 // let person = [];
