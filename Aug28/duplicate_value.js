@@ -24,12 +24,12 @@ const list = [
   ];
 
 let list2 = list.map((element) =>{
-    return element.guardianId + element.modeOfContactId + element.dateTimeOfContact
+    return element.guardianId && element.modeOfContactId && element.dateTimeOfContact
 });
 let duplicete = list2.some((element, index)=>{
     return list2.indexOf(element) !== index
 });
-console.log(`list has duplicate value ${duplicete}`);
+console.log(`list has duplicate value: ${duplicete}`);
 
 function handleErrors(response) {
     if (!response.ok) {
