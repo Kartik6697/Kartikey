@@ -1,0 +1,22 @@
+const list = [
+    {
+      guardianId: "67a33f9a-bce6-42e2-b147-0e2882babf1c",
+      modeOfContactId: "986a8946-272a-4d4e-824b-cc8181286748",
+      dateTimeOfContact: "",
+    },
+    {
+      guardianId: "67a33f9a-bce6-42e2-b147-0e2882babf1c",
+      modeOfContactId: "986a8946-272a-4d4e-824b-cc8181286748",
+      dateTimeOfContact: "",
+    },
+    {
+      guardianId: "67a33f9a-bce6-42e2-b147-0e2882babf1c",
+      modeOfContactId: "986a8946-272a-4d4e-824b-cc8181286748",
+      dateTimeOfContact: "",
+    },
+    {
+      guardianId: "67a33f9a-bce6-42e2-b147-0e2882babf1c",
+      modeOfContactId: "986a8946-272a-4d4e-824b-cc8181286748",
+      dateTimeOfContact: "",
+    },
+  ];
