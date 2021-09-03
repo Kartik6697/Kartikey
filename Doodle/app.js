@@ -1,59 +1,97 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.querySelector(".grid")
-    const doodler = document.createElement('div')
-    let doodlerLeftSpace = 50
-    let doodlerBottomSpace = 150
-    let isGameOver = false
-    let platformCount = 5 
-    let platforms = []
-    
-    //function for create doodler
-    function createDoodler() {
-         //use in
-        grid.appendChild(doodler)
-        doodler.classList.add('doodler')
-        doodler.style.left = doodlerLeftSpace + 'px'    //for spacing doodler left
-        doodler.style.bottom = doodlerBottomSpace + 'px'    //for spacing doodler bottom to set starting point
-     }
-    createDoodler()
+  const grid = document.querySelector('.grid')
+  const doodler = document.createElement('div')
+  let isGameOver = false
+  let speed = 2
+  let platformCount = 4
+  let platforms = []
+  let score = 0
+  let doodlerLeftSpace = 50
+  let startPoint = 50
+  let doodlerBottomSpace = startPoint
+  let upTimerId
+  let downTimerId
 
-    // class and property for platform
-    class Platform {
-        constructor(newPlatBottom) {
-          this.left = Math.random() * 315
-          this.bottom = newPlatBottom
-          this.visual = document.createElement('div')
-    
-          const visual = this.visual
-          visual.classList.add('platform')
-          visual.style.left = this.left + 'px'
-          visual.style.bottom = this.bottom + 'px'
-          grid.appendChild(visual)
-        }
-      }
+  class Platform {
+    constructor(newPlatBottom) {
+      this.left = Math.random() * 315
+      this.bottom = newPlatBottom
+      this.visual = document.createElement('div')
 
-
-    //function to create a platform
-    function createPlatforms() {
-        for(let i =0; i < platformCount; i++) {
-          let platformGap = 600 / platformCount //create platforms
-          let newPlatBottom = 100 + i * platformGap    //manages platform positions variations
-          let newPlatform = new Platform (newPlatBottom)
-          platforms.push(newPlatform)
-          console.log(platforms)
-        }
-      }
-      createPlatforms()
-      
-    function start() {
-        //if the game is not over we create doodler
-        if (!isGameOver == false) {
-            createDoodler()
-            createPatforms()
-
-        }
+      const visual = this.visual
+      visual.classList.add('platform')
+      visual.style.left = this.left + 'px'
+      visual.style.bottom = this.bottom + 'px'
+      grid.appendChild(visual)
     }
-    //attach to button to make game start
-    start()
+  }
 
+
+  function createPlatforms() {
+    for(let i =0; i < platformCount; i++) {
+      let platGap = 600 / platformCount
+      let newPlatBottom = 100 + i * platGap
+      let newPlatform = new Platform (newPlatBottom)
+      platforms.push(newPlatform)
+      console.log(platforms)
+    }
+  }
+        
+  function movePlatforms() {
+    if (doodlerBottomSpace > 200) {
+        platforms.forEach(platform => {
+          platform.bottom -= 5
+          let visual = platform.visual
+          visual.style.bottom = platform.bottom + 'px'
+
+          if(platform.bottom < 10) {
+            let firstPlatform = platforms[0].visual
+            firstPlatform.classList.remove('platform')
+            platforms.shift()
+            console.log(platforms)
+            score++
+            var newPlatform = new Platform(600)
+            platforms.push(newPlatform)
+          }
+      }) 
+    }
+    
+  }
+
+  function createDoodler() {
+    grid.appendChild(doodler)
+    doodler.classList.add('doodler')
+    doodlerLeftSpace = platforms[0].left
+    doodler.style.left = doodlerLeftSpace + 'px'
+    doodler.style.bottom = doodlerBottomSpace + 'px'
+  }
+
+  function jump() {
+    clearInterval(downTimerId)
+    isJumping = true
+    upTimerId = setInterval(function () {
+      console.log(startPoint)
+      console.log('1', doodlerBottomSpace)
+      doodlerBottomSpace += 20
+      doodler.style.bottom = doodlerBottomSpace + 'px'
+      console.log('2',doodlerBottomSpace)
+      console.log('s',startPoint)
+      if (doodlerBottomSpace > (startPoint + 200)) {
+        isJumping = false
+      }
+    },30)
+  }
+
+ 
+
+
+  function start() {
+    if (!isGameOver) {
+      createPlatforms()
+      createDoodler()
+      setInterval(movePlatforms,30)
+      jump(startPoint)
+    } 
+  }
+  start()
 })
