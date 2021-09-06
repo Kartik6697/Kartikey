@@ -1,19 +1,27 @@
-.grid{
+/* design for grid background */
+.grid {
     width: 400px;
     height: 600px;
-    background-color: greenyellow;
+    background-image: url('grid.png');
     position: relative;
-}
-.doodler{
-    width: 60px;
+    font-size: 100px;
+    text-align: center;
+  }
+  
+  /* design for doodler */
+  .doodler {
+    /* doodler image width */
+    width: 87px;  
     height: 85px;
-    background-color: maroon;
+    background-image: url('doodler.png');
     position: absolute;
-}
-
-.platform{
+  }
+  
+  /* design for platform  */
+  .platform {
     width: 85px;
     height: 15px;
-    background-color: midnightblue;
+    background-image: url('platform.png');
     position: absolute;
-}
+    /* position->absolute is for the platform is exactly inside our grid */
+  }
