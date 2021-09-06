@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let platforms = []; // empty array for the push newly created platform we've made
   let score = 0; //initialize variable globaly by 0
   let doodlerLeftSpace = 50; //variable define and initialize for leftspacing
-  let startPoint = 150; //variable defining and initialize for starting point
+  let startPoint = 250; //variable defining and initialize for starting point
   let doodlerBottomSpace = startPoint; //variable define for bottomspace and initialize as start point
   const gravity = 0.4;
   let upTimerId;
