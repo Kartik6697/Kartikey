@@ -6,6 +6,8 @@
     position: relative;
     font-size: 100px;
     text-align: center;
+    /* align-items: center; */
+    margin-left: 450px;
   }
   
   /* design for doodler */

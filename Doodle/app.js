@@ -206,7 +206,8 @@ function fall() {
       console.log('remove')
       grid.removeChild(grid.firstChild)
     }
-    grid.innerHTML = (`<h6>The Final Score is:</h6> <br>${score}`)
+    // grid.innerHTML = score 
+    grid.innerHTML = (`<h6>The Final Score is:</h6> <br>${score}`)  //displayig score
     // clear the uptimerid, downtimerid, lefttimerid, righttimerid for make game glitching
     clearInterval(upTimerId)
     clearInterval(downTimerId)
