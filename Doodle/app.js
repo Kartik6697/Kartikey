@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let doodlerLeftSpace = 50 //variable define and initialize for leftspacing
   let startPoint = 150  //variable defining and initialize for starting point
   let doodlerBottomSpace = startPoint //variable define for bottomspace and initialize as start point
-  const gravity = 0.6
+  const gravity = 0.4
   let upTimerId
   let downTimerId
   let isJumping = true  //this is called at initial level when jump function is called
@@ -206,8 +206,12 @@ function fall() {
       console.log('remove')
       grid.removeChild(grid.firstChild)
     }
-    // grid.innerHTML = score 
-    grid.innerHTML = (`<h6>The Final Score is:</h6> <br>${score}`)  //displayig score
+
+    //for displayig score
+    grid.innerHTML = score
+    document.write = alert(`the final score is: ${score}`)
+    // grid.innerHTML = (`<h6>The Final Score is:</h6> <br>${score}`)  
+    
     // clear the uptimerid, downtimerid, lefttimerid, righttimerid for make game glitching
     clearInterval(upTimerId)
     clearInterval(downTimerId)
