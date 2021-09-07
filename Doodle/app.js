@@ -98,17 +98,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (doodlerBottomSpace <= 0) {
         gameOver();
       }
+
       //check the colision of doodler with platform
       //this all condition should be true for colision
       platforms.forEach((platform) => {
-        if (
+        if (  //condition is to check on the platform
           doodlerBottomSpace >= platform.bottom &&
           doodlerBottomSpace <= platform.bottom + 15 && //the height of platform is 15
           doodlerLeftSpace + 60 >= platform.left && //doodler width is 60
           doodlerLeftSpace <= platform.left + 85 && //for check that doodler is not on the right side of the platform form out its width
           !isJumping
         ) {
-          console.log("tick");
+          console.log("jump"); //display when doodle jumps
           startPoint = doodlerBottomSpace; //if we are on platform then we overwrite the start
           jump();
           console.log("start", startPoint);
@@ -203,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isGameOver = true; //at initially calling this function the game over is true
     //removing children of the grid using a while loop
     while (grid.firstChild) {
-      console.log("remove");
+      console.log("Game_Over");
       grid.removeChild(grid.firstChild);
     }
 
