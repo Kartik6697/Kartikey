@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //function fall for get doodler back
   function fall() {
+    clearInterval(upTimerId);
+    clearInterval(downTimerId);
+    clearInterval(leftTimerId);
+    clearInterval(rightTimerId);
     isJumping = false; // when fall function is called the value of isjumping change
     clearInterval(upTimerId); // js method for not let doodler go up anymore
     downTimerId = setInterval(function () {
@@ -102,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
       //check the colision of doodler with platform
       //this all condition should be true for colision
       platforms.forEach((platform) => {
-        if (  //condition is to check on the platform
+        if (
+          //condition is to check on the platform
           doodlerBottomSpace >= platform.bottom &&
           doodlerBottomSpace <= platform.bottom + 15 && //the height of platform is 15
           doodlerLeftSpace + 60 >= platform.left && //doodler width is 60
@@ -132,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("2", doodlerBottomSpace);
       console.log("s", startPoint);
       //condition for get doodler back down at position of jumpstartposition + 200
-      if (doodlerBottomSpace > startPoint + 200) {
+      if (doodlerBottomSpace > startPoint + 350) {
         // this contion is for doodler to jump to certain height after land to the platform
         fall();
         isJumping = false;
