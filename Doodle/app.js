@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log("s", startPoint);
       //condition for get doodler back down at position of jumpstartposition + 200
       if (doodlerBottomSpace > startPoint + 350) {
-        // this contion is for doodler to jump to certain height after land to the platform
+        // this condition is for doodler to jump to certain height after land to the platform
         fall();
         isJumping = false;
       }
