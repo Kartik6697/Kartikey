@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let newPlatform = new Platform(newPlatBottom);
       // push newly created platform value into the array
       platforms.push(newPlatform);
-      console.log(platforms);
+      // console.log(platforms);
     }
   }
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let firstPlatform = platforms[0].visual; //grab our platform array go into it and get visual
           firstPlatform.classList.remove("platform"); //getting a class list of array and remove platform from it
           platforms.shift(); // this will help us to get rid from the platform array first item using shift() method
-          console.log(platforms);
+          // console.log(platforms);
           score++; //increment the score by move of the platform
           let newPlatform = new Platform(600); //pass new platform till our grid's height
           platforms.push(newPlatform); //pass this new platforms into our array
@@ -114,10 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
           doodlerLeftSpace <= platform.left + 85 && //for check that doodler is not on the right side of the platform form out its width
           !isJumping
         ) {
-          console.log("jump"); //display when doodle jumps
+          // console.log("jump"); //display when doodle jumps
           startPoint = doodlerBottomSpace; //if we are on platform then we overwrite the start
           jump();
-          console.log("start", startPoint);
+          // console.log("start", startPoint);
           isJumping = true;
         }
       });
@@ -130,12 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
     isJumping = true;
     upTimerId = setInterval(function () {
       //uptimerid pass through the function for every 30ms
-      console.log(startPoint);
-      console.log("1", doodlerBottomSpace);
+      // console.log(startPoint);
+      // console.log("1", doodlerBottomSpace);
       doodlerBottomSpace += 20; // essentially adding 20 doodle bottom space
       doodler.style.bottom = doodlerBottomSpace + "px";
-      console.log("2", doodlerBottomSpace);
-      console.log("s", startPoint);
+      // console.log("2", doodlerBottomSpace);
+      // console.log("s", startPoint);
       //condition for get doodler back down at position of jumpstartposition + 200
       if (doodlerBottomSpace > startPoint + 350) {
         // this contion is for doodler to jump to certain height after land to the platform
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
     leftTimerId = setInterval(function () {
       //condition for check that doodler is inside our grid or not
       if (doodlerLeftSpace >= 0) {
-        console.log("going left");
+        // console.log("going left");
         doodlerLeftSpace -= 5; // condition to move our doodler left at particular point
         doodler.style.left = doodlerLeftSpace + "px";
       } else moveRight();
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rightTimerId = setInterval(function () {
       //changed to 313 (grid width - doodler width) to fit doodle image
       if (doodlerLeftSpace <= 313) {
-        console.log("going right");
+        // console.log("going right");
         doodlerLeftSpace += 5;
         doodler.style.left = doodlerLeftSpace + "px";
       } else moveLeft();
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isGameOver = true; //at initially calling this function the game over is true
     //removing children of the grid using a while loop
     while (grid.firstChild) {
-      console.log("Game_Over");
+      // console.log("Game_Over");
       grid.removeChild(grid.firstChild);
     }
 
