@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // function for create a platform
-  function createPlatforms() {
+  const createPlatforms=()=> {
     // we use loop for platform count it and display
     for (let i = 0; i < platformCount; i++) {
       let platGap = 600 / platformCount; // this is for platform gap here we have height of platform 600 / by platform count to manage gap
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // function for move platforms
-  function movePlatforms() {
+  const movePlatforms=()=> {
     //check the condition of doodler space for move
     if (doodlerBottomSpace > 200) {
       // check the individual platform moves bottom by four each time in interval of 30ms using setInterval method
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //function for creating a doodler
-  function createDoodler() {
+  const createDoodler=()=> {
     grid.appendChild(doodler);
     doodler.classList.add("doodler");
     doodlerLeftSpace = platforms[0].left; //this is for passing through a 0 into array at starting point and getting left of that platform
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //function fall for get doodler back
-  function fall() {
+  const fall=()=> {
     clearInterval(upTimerId);
     clearInterval(downTimerId);
     clearInterval(leftTimerId);
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // function for doodle jump
-  function jump() {
+  const jump=()=> {
     clearInterval(downTimerId); //to clear down timerid when we jump so each time when we jump we clear the down timerid
     isJumping = true;
     upTimerId = setInterval(function () {
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // function for operation move left side
-  function moveLeft() {
+  const moveLeft=()=> {
     // condition for if we moving left that time the right timerid interval should be clear
     if (isGoingRight) {
       clearInterval(rightTimerId);
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // function for operation move right side
-  function moveRight() {
+  const moveRight=()=> {
     // condition for if we moving right that time the left timerid interval should be clear
     if (isGoingLeft) {
       clearInterval(leftTimerId);
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // function for operation move straight side
-  function moveStraight() {
+  const moveStraight=()=> {
     //clear every movement and simply move straight way
     isGoingLeft = false;
     isGoingRight = false;
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // function for doodler control
   //assign functions to keyCodes
-  function control(e) {
+  const control=(e)=> {
     doodler.style.bottom = doodlerBottomSpace + "px";
     //check the condition for movements and according to that call the particular functions
     if (e.key === "ArrowLeft") {
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //  game over function to cleare everthing
-  function gameOver() {
+  const gameOver=()=> {
     isGameOver = true; //at initially calling this function the game over is true
     //removing children of the grid using a while loop
     while (grid.firstChild) {
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(rightTimerId);
   }
 
-  function start() {
+  const start=()=> {
     //condition that if is not over than create a doodler
     //also when we press the button the game will starts
     if (!isGameOver) {
