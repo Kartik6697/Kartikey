@@ -24,6 +24,7 @@ class App extends React.Component {
       <Counter 
       ignoreProp={this.state.ignoreProp}/> : 
       null}
+
     </div>
   }
 }
