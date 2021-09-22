@@ -8,7 +8,7 @@ const App = () => {
   const createValues = () => {
     const values = [];
 
-    for (let i = 9; i > 0; i--) {
+    for (let i = 1; i < 10; i++) {
       values.push(
         <button name={i} onClick={handleclick} key={i}>
           {i}
@@ -39,7 +39,8 @@ const App = () => {
   };
 
   const power = () =>{
-    setResult(eval(result*result).toString());
+    // setResult(eval(result*result).toString());
+    setResult(Math.pow(result, 5)); //for modulo operation user need to change the power(exponent) value in here
   }
 
   return (
