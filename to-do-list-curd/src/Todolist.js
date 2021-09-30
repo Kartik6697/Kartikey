@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import AddBoxTwoToneIcon from '@mui/icons-material/AddBoxTwoTone';
-import ListCom from './ListCom';
+import DeletionCom from './DeletionCom';
 
 const TodoList = () =>{
     const [item, setItem] = useState("");
@@ -13,8 +13,8 @@ const TodoList = () =>{
     }
 
      const listOfItem = () =>{
-        setNewItem((prevValue) => {
-            return [...prevValue, item];
+        setNewItem((oldValue) => {
+            return [...oldValue, item];
         });
         setItem(" ");
     };
@@ -38,7 +38,7 @@ return(
             <ol>
                  {
                 newitem.map((val, index) => {
-                    return <ListCom key={index} text={val} />;
+                    return <DeletionCom key={index} text={val} />;
                 })
             }
             </ol>

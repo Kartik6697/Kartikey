@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const ListCom = (props) => {
+const DeletionCom = (props) => {
     const [line, setLine] = useState(false);
 
     const cutIt= () =>{
@@ -20,4 +20,4 @@ const ListCom = (props) => {
   );
 };
 
-export default ListCom;
+export default DeletionCom;
