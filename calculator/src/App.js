@@ -40,8 +40,11 @@ const App = () => {
 
   const power = () =>{
     // setResult(eval(result*result).toString());
-    setResult(Math.pow(result, 5)); //for modulo operation user need to change the power(exponent) value in here
-  }
+    // setResult(Math.pow(result, 5)); //for modulo operation user need to change the power(exponent) value in here
+    if (result.includes(`^`)){
+      [A,b] = result.split(`^`)
+      setResult = Math.pow(A,b)
+    }
 
   return (
     <div className="App">
@@ -94,4 +97,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App ;
