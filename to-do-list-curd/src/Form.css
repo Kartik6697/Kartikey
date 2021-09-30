@@ -1,0 +1,8 @@
+.Form{
+    width: 100%; height: 300px;
+    background: #6895dc;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
